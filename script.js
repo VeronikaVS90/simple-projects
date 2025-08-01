@@ -18,6 +18,7 @@ function calculate() {
         document.getElementById('display').value = result;
     } catch (error) {
         alert("Invalid expression");
+        display.value = '';
     }
 }
 
