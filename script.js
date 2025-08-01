@@ -20,3 +20,23 @@ function calculate() {
         alert("Invalid expression");
     }
 }
+
+// keyboard improvement
+document.addEventListener("keydown", function (event) {
+    const key = event.key;
+    const validKeys = "0123456789+-*/.";
+
+    if (validKeys.includes(key)) {
+        append(key);
+    } else if (key === "Enter") {
+        calculate();
+    } else if (key === "Backspace") {
+        deleteLast();
+    } else if (key === "Escape") {
+        clearDisplay();
+    }
+});
+
+window.onload = function () {
+    document.getElementById("display").focus();
+}
